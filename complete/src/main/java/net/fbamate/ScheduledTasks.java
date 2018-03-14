@@ -11,6 +11,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import net.fbamate.Entity.*;
+
+import java.io.IOException;
 import java.sql.Timestamp; 
 
 @Component
@@ -68,8 +70,12 @@ public class ScheduledTasks {
             log.info(cmd);
             
             //TODO 调用外部接口
-        	
-        	
+            try {
+				Runtime.getRuntime().exec(cmd);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}        	
         	
         }
         
