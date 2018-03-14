@@ -27,7 +27,7 @@ public class ScheduledTasks {
 
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
     private static final SimpleDateFormat picFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-    private static final String cmdPattern = "casperjs --ignore-ssl-errors=yes --ssl-protocol=any  /home/amazon2.js --pic=%s --oid=%s --tid=%d";
+    private static final String cmdPattern = "casperjs --ignore-ssl-errors=yes --ssl-protocol=any  /home/amazon1.js --pic=%s --oid=%s --tid=%d";
     
 
     @Scheduled(fixedRate = 5000)

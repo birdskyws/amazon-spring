@@ -20,6 +20,6 @@ public class OssClientTest {
 	@Test
 	public void testOss() throws IOException
 	{
-		Oss.uploadPic("201803121112.jpg", "d:/1.jpg");
+		//Oss.uploadPic("201803121112.jpg", "d:/1.jpg");
 	}
 }

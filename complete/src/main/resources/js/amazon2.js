@@ -15,6 +15,7 @@ function getSellors() {
     return mySellors;  
 }
 casper.start(url, function(){
+	fs.write("/hom/2.txt",tid);
     this.capture("/home/capture/"+pic);
     sellors = this.evaluate(getSellors);
     //sellors = sellors.join("|"); 
@@ -22,7 +23,7 @@ casper.start(url, function(){
     console.log(sellors);
 });
 capture.then(function(){
-    url = "http://locahost:8080/demo/pic?tid"+tid;
+    url = "http://localhost:8080/demo/pic?tid"+tid;
     this.open(url);
 })
 casper.then(function()
@@ -36,7 +37,6 @@ casper.then(function()
         }
     },function(){
         this.echo(this.getHTML());
-        fs.write("d:/2.txt",this.getHTML());
     })
 }) 
 casper.run();
