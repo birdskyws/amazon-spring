@@ -30,7 +30,7 @@ public class ScheduledTasks {
     private static final String cmdPattern = "casperjs --ignore-ssl-errors=yes --ssl-protocol=any  /home/amazon1.js --pic=%s --oid=%s --tid=%d";
     
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 3000)
     public void reportCurrentTime() {
     	
         log.info("The time is now {}", dateFormat.format(new Date()));
@@ -46,7 +46,7 @@ public class ScheduledTasks {
         {
         	System.out.println(aord.getOid());
         	//TODO 从配置文件中读取数据
-        	long tasktime = now +3*60*1000;
+        	long tasktime = now +60*60*1000;
         	aord.setTasktime(new Timestamp(tasktime));
         	//调整aord的tasktime字段，指定下一次执行的时间
         	aord = aordRepository.save(aord);
